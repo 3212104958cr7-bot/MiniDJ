@@ -3,6 +3,14 @@ project(cpp_exam)
 
 set(CMAKE_CXX_STANDARD 14)
 
+add_executable(cpp_exam main.cpp Song.cpp)
+
+target_include_directories(cpp_exam PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+
+if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+    target_compile_options(cpp_exam PRIVATE -Wall -Wextra)
+endif()
+
 # 启用测试
 enable_testing()
 
